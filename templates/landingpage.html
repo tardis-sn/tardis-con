@@ -121,19 +121,24 @@
                         <div data-countdown="{{ start_date }}"></div>
                         <div class="header-content text-center">
                             <h2 class="header-title">TARDIS-Con {{event_year}}</h2>
+                            {% if feature_line %}
+                            <h3 class="text-white">{{ feature_line }}</h3>
+                            {% endif %}
                             <h4 class="text-white">
                                 {{ start_date.strftime('%d') }}
-                                - {{ end_date.strftime('%d') }}{{ end_date.strftime('%B')
+                                - {{ end_date.strftime('%d') }} {{ end_date.strftime('%B')
                                 }}
                                 {{ end_date.strftime('%Y') }}
                             </h4>
                             <h4 class="text-white">at Michigan State University, East Lansing, USA</h4>
                             <div class="col-xs-12" style="height:50px;"></div>
                             <h3 class="text-white">TARDIS-Con {{event_year}} is an unconference-style conference
-                                focused on open science code and astrophysics. We believe that collaboration and
-                                open-source development are key to advancing the field of astrophysics and we are
-                                excited to bring together researchers and students from many disciplines such as
-                                astrophysics, software engineering, machine learning, and natural language processing.
+                                focused on open science code, astrophysics, and the DeepThought Initiative.
+                                We believe that collaboration and open-source development are key to advancing both
+                                astrophysics and the scientific process itself, and we are excited to bring together
+                                researchers and students from many disciplines such as astrophysics, software
+                                engineering, machine learning, natural language processing, and research
+                                infrastructure.
                             </h3>
                             <ul class="header-btn">
                                 <!--
@@ -251,15 +256,7 @@
                         </div>
                         <div class="features-content">
                             <h4 class="features-title"><a href="#">Computational Metascience</a></h4>
-                            <p class="text">Collect data and build a prototype model to analyze the overall climate of
-                                the current academic research system. Utilize data from various sources to examine key
-                                metrics such as peer review rates, publishing rates, funding rates, and growth of the
-                                global research community. Explore how these metrics have evolved over time and identify
-                                any trends or patterns that may indicate systemic issues or opportunities for
-                                improvement. Analyze the impact of factors such as funding models, publication
-                                standards, and work culture (e.g. tension between work-life balance and ever growing
-                                list of requirements for “success” of a researcher) on the climate of the academic
-                                research system. </p>
+                            <p class="text">{{ metascience_text | default("Collect data and build a prototype model to analyze the overall climate of the current academic research system. Utilize data from various sources to examine key metrics such as peer review rates, publishing rates, funding rates, and growth of the global research community. Explore how these metrics have evolved over time and identify any trends or patterns that may indicate systemic issues or opportunities for improvement. Analyze the impact of factors such as funding models, publication standards, and work culture on the climate of the academic research system.") }}</p>
                         </div>
                     </div> <!-- single features -->
                 </div>
